@@ -78,7 +78,7 @@ app.use(flash());
 
 app.use((req,res,next)=>{ 
    res.locals.success = req.flash("success"); 
-   res.locals.error   = req.flash("error");
+   res.locals.error  = req.flash("error");
    res.locals.currUser=req.user;
     next();
 });
@@ -96,7 +96,8 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Something went wrong!" } = err;
-    res.status(statusCode).render("error.ejs", { err });
+    // ✅ CORRECT: Just use the view name
+    res.status(statusCode).render("error", { err }); 
 });
 
 const PORT = 8080;
