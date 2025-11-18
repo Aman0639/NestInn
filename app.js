@@ -39,7 +39,7 @@ mongoose.connect(DBurl)
 const session=require("express-session");
 
 const store = MongoStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl: DBurl,
     crypto: {
         secret: process.env.SECRET,
     },
