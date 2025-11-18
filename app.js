@@ -110,7 +110,7 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Something went wrong!" } = err;
     // ✅ CORRECT: Just use the view name
-    res.status(statusCode).render("error", { err }); 
+    res.status(statusCode).render("error.ejs", { err }); 
 });
 
 const PORT = 8080;
