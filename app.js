@@ -39,7 +39,7 @@ main().then(() => {
 });
 
 async function main() {
-    console.log("ATLAS DB URL:", dbUrl);
+   // console.log("ATLAS DB URL:", dbUrl);
     await mongoose.connect(dbUrl);
 }
 
